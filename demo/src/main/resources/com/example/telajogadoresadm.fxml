@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.TelaJogadoresAdm">
+   <children>
+      <HBox prefHeight="104.0" prefWidth="1000.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="foto" fitHeight="97.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="27.0" top="4.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="77.0" prefWidth="462.0" text="RIO BRANCO SPORT CLUB">
+               <font>
+                  <Font name="Arial Black" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="100.0" top="12.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="voltar_inicio" mnemonicParsing="false" onAction="#rota_TelaInicial" prefHeight="25.0" prefWidth="127.0" text="Voltar a tela inicial">
+               <HBox.margin>
+                  <Insets left="200.0" top="76.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="29.0" layoutY="132.0" prefHeight="460.0" prefWidth="341.0">
+         <children>
+            <Label layoutX="51.0" layoutY="57.0" text="Adicione ou atualize dados de um jogador">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="adicionar_jog" layoutX="51.0" layoutY="302.0" mnemonicParsing="false" onAction="#Adicionar_Jogador" text="Adicionar jogador" />
+            <Button fx:id="alterar_jog" layoutX="180.0" layoutY="302.0" mnemonicParsing="false" onAction="#Atualizar_Jogador" text="Alterar jogador" />
+            <TextField fx:id="nome" layoutX="96.0" layoutY="85.0" promptText="Nome" />
+            <TextField fx:id="num" layoutX="96.0" layoutY="131.0" promptText="Número" />
+            <TextField fx:id="gols" layoutX="96.0" layoutY="174.0" promptText="Gols" />
+            <DatePicker fx:id="data_nasc" layoutX="84.0" layoutY="218.0" promptText="Data de nascimento" />
+            <ComboBox fx:id="CB_posição" layoutX="123.0" layoutY="261.0" prefHeight="25.0" prefWidth="95.0" promptText="Posição" />
+            <ComboBox fx:id="CB_jogos" layoutX="70.0" layoutY="371.0" prefHeight="25.0" prefWidth="95.0" promptText="Jogos" />
+            <Button fx:id="adicionar_pj" layoutX="184.0" layoutY="370.0" mnemonicParsing="false" onAction="#Adicionar_Partida_Jogada" text="Add jogo" />
+            <Label layoutX="42.0" layoutY="343.0" text="Adicione as partidas jogadas por esse jogador">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="518.0" layoutY="132.0" prefHeight="433.0" prefWidth="462.0">
+         <children>
+            <Label layoutX="203.0" layoutY="14.0" text="Jogadores">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table_view" layoutX="18.0" layoutY="47.0" prefHeight="379.0" prefWidth="427.0">
+               <columns>
+                  <TableColumn fx:id="tv_nome" maxWidth="1000.0" prefWidth="140.79998779296875" text="Nome" />
+                  <TableColumn fx:id="tv_num" maxWidth="1000.0" prefWidth="55.20001220703125" text="Número" />
+                  <TableColumn fx:id="tv_gols" prefWidth="43.199951171875" text="Gols" />
+                  <TableColumn fx:id="tv_pj" prefWidth="40.79998779296875" text="PJ" />
+                  <TableColumn fx:id="tv_idade" prefWidth="44.0" text="Idade" />
+                  <TableColumn fx:id="tv_posição" maxWidth="1000.0" prefWidth="106.4000244140625" text="Posição" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="excl_jog" layoutX="537.0" layoutY="569.0" mnemonicParsing="false" onAction="#Excluir_Jogador" text="Excluir jogador" />
+   </children>
+</AnchorPane>
